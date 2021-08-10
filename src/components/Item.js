@@ -1,13 +1,11 @@
 
-const Item = ({ work, completed }) => {
-
-
+const Item = ({ work, completed,important,onClickDelete,onClickImportant }) => {
 
     return (
         <li className={"list-group-item " + (completed ? "bg-success" : "")}>
-            <span className="text-danger">{work}</span>
-            <span className="btn btn-danger float-end ms-2">x</span>
-            <span className="btn btn-warning float-end">!</span>
+            <span className={important?"text-warning":""}>{work}</span>
+            <span onClick={()=>onClickDelete(work)} className="btn btn-danger float-end ms-2">x</span>
+            <span onClick={()=>onClickImportant(work)} className="btn btn-warning float-end">!</span>
         </li>
     )
 }
