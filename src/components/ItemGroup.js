@@ -1,14 +1,7 @@
 import Item from "./Item"
-import { useState } from "react";
 
-const ItemGroup = () => {
 
-    const [items, setItems] = useState([
-        { work: "Play game", completed: true, important: true },
-        { work: "Cleen home", completed: false, important: false },
-        { work: "Go to sleep", completed: true, important: false },
-        { work: "Do home work", completed: false, important: true },
-    ])
+const ItemGroup = ({setItems,items}) => {
 
     const onClickDelete = (work) => {
         const filterWork = items.filter((item) => item.work !== work)

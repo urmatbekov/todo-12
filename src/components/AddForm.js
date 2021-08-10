@@ -1,7 +1,31 @@
-const AddForm = () => {
+import { useState } from "react"
+const AddForm = ({ setItems, items }) => {
+    const [value, setValue] = useState("")
+
+    const onSubmitForm = (e) => {
+        e.preventDefault()
+        if (value.trim().length > 0) {
+
+            const newItem = {
+                work: value,
+                completed: false,
+                important: false
+            }
+
+            const newItems = [...items, newItem]
+            setItems(newItems)
+            alert("Todo succes added")
+            setValue("")
+        }
+    }
+
+    const onChangeInput = (e) => {
+        setValue(e.currentTarget.value)
+    }
+
     return (
-        <form className="mb-3 d-flex">
-            <input placeholder="Write work" className="form-control me-3" type="text" />
+        <form onSubmit={onSubmitForm} className="mb-3 d-flex">
+            <input value={value} onChange={onChangeInput} placeholder="Write work" className="form-control me-3" type="text" />
             <button className="btn btn-primary">Add</button>
         </form>
     )
