@@ -5,10 +5,10 @@ import { useState } from "react";
 
 const App = () => {
     const [items, setItems] = useState([
-        { work: "Play game", completed: true, important: true },
-        { work: "Cleen home", completed: false, important: false },
-        { work: "Go to sleep", completed: true, important: false },
-        { work: "Do home work", completed: false, important: true },
+        {id:12, work: "Play game", completed: true, important: true },
+        {id:23, work: "Cleen home", completed: false, important: false },
+        {id:45, work: "Go to sleep", completed: true, important: false },
+        {id:58, work: "Do home work", completed: false, important: true },
     ])
     return (
         <main>

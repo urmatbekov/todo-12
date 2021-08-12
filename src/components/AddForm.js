@@ -9,7 +9,8 @@ const AddForm = ({ setItems, items }) => {
             const newItem = {
                 work: value,
                 completed: false,
-                important: false
+                important: false,
+                id:parseInt(Math.random()*1000000000)
             }
 
             const newItems = [...items, newItem]
